@@ -1,5 +1,6 @@
 # Dashboard d'Analyse Financière
 
+-----> Lien vers le dashboard : https://financialdashboard-cs.streamlit.app
 Ce projet est une application interactive développée sur Streamlit, permettant d'explorer et de comparer les données financières d'entreprises cotées en bourse. 
 Il combine extraction de données via API, retraitement et manipulation des indicateurs clés, et visualisation dynamique.
 
