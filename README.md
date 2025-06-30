@@ -4,7 +4,8 @@
 
 ---
 
-Ce projet est une application interactive développée avec **Streamlit**, permettant d'explorer et de comparer les données financières d’entreprises cotées en bourse. Il combine **extraction via API**, **nettoyage des données**, **calcul d’indicateurs clés**, et **visualisation dynamique**.
+Ce projet est une application interactive développée avec **Streamlit**, permettant d'explorer et de comparer les données financières d’entreprises cotées en bourse. 
+Il combine **extraction via API**, **nettoyage des données**, **calcul d’indicateurs clés**, et **visualisation dynamique**.
 
 ---
 
@@ -19,7 +20,8 @@ Ce projet est une application interactive développée avec **Streamlit**, perme
 
 - **Construction du dashboard** : visualisation des principaux **KPIs financiers** utilisés dans mes analyses, avec la possibilité de comparer plusieurs entreprises d’un même secteur.
   ➤ Code disponible dans `app_dashboard.py`
-  ⚠️ *Seule une sélection d’entreprises est disponible dans cette version publique.*
+  
+  ⚠️ *Seule une sélection d’entreprises est disponible dans cette version publique.* ⚠️
 
 ---
 
