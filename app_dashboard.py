@@ -95,7 +95,7 @@ st.title("📊 Financial Analysis Tool ")
 
 # ----------------------------- DASH
 if len(df_tableau_recap) == 0:
-    st.warning("Aucune donnée pour les filtres sélectionnés.")
+    st.warning("Aucune donnée pour les filtres sélectionnés. Pour afficher les filtres, cliquez sur >> en haut à gauche.")
 else:
     df_tableau_recap = df_tableau_recap.set_index('symbol')
 
@@ -292,4 +292,4 @@ else:
 
 
     else:
-        st.warning("Veuillez sélectionner au moins une entreprise. Pour afficher les filtres, cliquer sur >>> en haut à gauche.")
+        st.warning("Veuillez sélectionner au moins une entreprise.")
