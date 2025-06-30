@@ -77,7 +77,7 @@ metrics_lineplot = {'totalRevenue':'Revenues',
 label_to_column = {v: k for k, v in metrics_lineplot.items()}
 
 # Selectbox avec les labels
-selected_label = st.sidebar.selectbox("Ratio", sorted(label_to_column.keys()),index=sorted(label_to_column.keys()).index('Revenues'))
+selected_label = st.sidebar.selectbox("Ratio pour le lineplot", sorted(label_to_column.keys()),index=sorted(label_to_column.keys()).index('Revenues'))
 
 # Nom de la colonne dans le DataFrame
 selected_column = label_to_column[selected_label]
