@@ -292,4 +292,4 @@ else:
 
 
     else:
-        st.warning("Veuillez sélectionner au moins une entreprise.")
+        st.warning("Veuillez sélectionner au moins une entreprise. Pour afficher les filtres, cliquer sur >>> en haut à gauche.")
