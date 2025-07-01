@@ -42,18 +42,18 @@ st.sidebar.header("Paramètres")
 
 # filtre sur le secteur d'activité
 industry_list = df["industry"].dropna().unique()
-selected_industry = st.sidebar.selectbox("Industrie", sorted(industry_list))
+selected_industry = st.sidebar.selectbox("Industry", sorted(industry_list))
 df_filtered = df[df["industry"] == selected_industry]
 
 # filtre sur l'entreprise
 company_list = df_filtered["symbol"].unique()
-selected_companies = st.sidebar.multiselect("Entreprises", sorted(company_list))
+selected_companies = st.sidebar.multiselect("Companies", sorted(company_list))
 
 df_filtered = df_filtered[df_filtered["symbol"].isin(selected_companies)]
 
 # filtre sur l'année fiscale
 annee_fiscale = df_filtered['fiscal_year'].dropna().unique()
-selected_fiscalyear = st.sidebar.selectbox("Année fiscale", sorted(annee_fiscale, reverse=True))
+selected_fiscalyear = st.sidebar.selectbox("Fiscal year", sorted(annee_fiscale, reverse=True))
 df_tableau_recap = df_filtered[df_filtered["fiscal_year"] == selected_fiscalyear]
 
 # filtre sur le ratio à afficher dans le lineplot d'introduction
@@ -77,7 +77,7 @@ metrics_lineplot = {'totalRevenue':'Revenues',
 label_to_column = {v: k for k, v in metrics_lineplot.items()}
 
 # Selectbox avec les labels
-selected_label = st.sidebar.selectbox("Ratio pour le lineplot", sorted(label_to_column.keys()),index=sorted(label_to_column.keys()).index('Revenues'))
+selected_label = st.sidebar.selectbox("Ratio for lineplot", sorted(label_to_column.keys()),index=sorted(label_to_column.keys()).index('Revenues'))
 
 # Nom de la colonne dans le DataFrame
 selected_column = label_to_column[selected_label]
@@ -95,7 +95,7 @@ st.title("📊 Financial Analysis Tool ")
 
 # ----------------------------- DASH
 if len(df_tableau_recap) == 0:
-    st.warning("Aucune donnée pour les filtres sélectionnés. Pour afficher les filtres, cliquez sur >> en haut à gauche.")
+    st.warning("No data available for the selected filters. To adjust filters, click the >> icon on the left.")
 else:
     df_tableau_recap = df_tableau_recap.set_index('symbol')
 
@@ -138,17 +138,17 @@ else:
 
         # ------------------------ OVERVIEW TABLE
         metrics_overview = {
-            'totalRevenue': 'Revenus',
+            'totalRevenue': 'Revenues',
             'RD_ratio': 'R&D ratio',
             'SGA_ratio': 'SG&A ratio',
             'detteRatio': 'Debt ratio',
             'marketCap': 'Market capitalisation',
             'cashAndCashEquivalentsAtCarryingValue': 'Cash & equiv',
-            'dividendYield': 'Rendements dividendes',
+            'dividendYield': 'Dividend yield',
         }
 
         # Colonnes à formater en pourcentage
-        percent_labels = ['R&D ratio', 'SG&A ratio','Debt ratio', 'Rendements dividendes']
+        percent_labels = ['R&D ratio', 'SG&A ratio','Debt ratio', 'Dividend yield']
 
         # Construction du tableau avec les bons formats
         overview_data = {}
@@ -261,14 +261,14 @@ else:
             hover_name="symbol",
             labels={
                 "peRatio": "P/E Ratio",
-                "netMargin": "Marge nette",
-                "marketCap": "Capitalisation boursière"
+                "netMargin": "Net margin",
+                "marketCap": "Market capitalisation"
             },
         )
         fig_scatter.update_layout(
-            xaxis_title="P/E Ratio (bas = moins cher)",
-            yaxis_title="Marge nette (haut = plus rentable)",
-            legend_title="Entreprise",
+            xaxis_title="P/E Ratio (lower = cheaper)",
+            yaxis_title="Net margin",
+            legend_title="Companies",
         )
         st.plotly_chart(fig_scatter, use_container_width=True)
 
