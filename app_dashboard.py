@@ -38,7 +38,7 @@ df['peRatio'] = df['stock_price'] / (df['netIncome'] / df['commonStockSharesOuts
 df['price2book'] = df['marketCap'] / df['totalShareholderEquity']
 
 # ------------------------------------ CREATION DES FILTRES
-st.sidebar.header("Paramètres")
+st.sidebar.header("Parameters")
 
 # filtre sur le secteur d'activité
 industry_list = df["industry"].dropna().unique()
